@@ -65,7 +65,7 @@ public class Week05JUnitTest
 	/**
 	 * method runs a number of tests (in this case 1000) and checks
 	 *  that each facet (1-6) has a value (non-zero) count, 
-	 *  calculates the mean and standard deviation
+	 *  calculates the mean and standard deviation and prints out values of points within standard deviation
 	 *  */
 	@Test
 	public void testRandomDie()
@@ -151,8 +151,8 @@ public class Week05JUnitTest
 			double minRange = 0;
 			double maxRange = 0;
 			
-			minRange = mean - stDev ;
-			maxRange = mean + stDev;
+			minRange = mean - stDev*2 ;
+			maxRange = mean + stDev*2;
 			
 			if ((ones > minRange)&(ones < maxRange)|| (twos > minRange)&(twos < maxRange) ||
 					(threes > minRange)&(threes < maxRange) || (fours > minRange)&(fours < maxRange)||
@@ -166,7 +166,6 @@ public class Week05JUnitTest
 					"bucket 2 - " + dist2+ " ; "+ "bucket 3 - " + dist3+ " ; "+ "bucket 4 - " + dist4+ " ; "+
 					"bucket 5 - " + dist5+ " ; "+ "bucket 6 - " + dist6);
 			 System.out.println("Mean: " + String.format("%.2f",mean) + ", " +"Standard deviation: "+String.format("%.2f",stDev));
-			 System.out.println("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
 			 
 		
 			} 

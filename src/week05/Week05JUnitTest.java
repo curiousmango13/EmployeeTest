@@ -88,7 +88,8 @@ public class Week05JUnitTest
 			
 						
 			int testQuantity =  1000;
-			
+		
+		//collecting values into buckets	
 		for(int i = 0; i < testQuantity; ++i)
 		{
 			
@@ -118,9 +119,10 @@ public class Week05JUnitTest
 			
 
 	}			
-		
+		//calculating mean of buckets
 			mean = (((double)(ones+twos+threes+fours+fives+sixes)) / (double)6);
 	
+		//formulas to find St Dev	
 			double oneMinMean = ones-mean;
 			double twoMinMean = twos-mean;
 			double threeMinMean = threes-mean;
@@ -139,7 +141,7 @@ public class Week05JUnitTest
 			
 			stDev= Math.sqrt(meanOfSq);
 				
-				
+			//calculating distribution for each bucket	
 			dist1= ((double)ones/(double)testQuantity)*100;
 			dist2= ((double)twos/(double)testQuantity)*100;
 			dist3= ((double)threes/(double)testQuantity)*100;
@@ -148,12 +150,14 @@ public class Week05JUnitTest
 			dist6= ((double)sixes/(double)testQuantity)*100;
 		
 		
+			//finding ranges between -2 St Dev and +2 St Dev
 			double minRange = 0;
 			double maxRange = 0;
 			
 			minRange = mean - stDev*2 ;
 			maxRange = mean + stDev*2;
 			
+			//if values are within therange-> print them out
 			if ((ones > minRange)&(ones < maxRange)|| (twos > minRange)&(twos < maxRange) ||
 					(threes > minRange)&(threes < maxRange) || (fours > minRange)&(fours < maxRange)||
 					(fives > minRange)&(fives < maxRange)||(sixes > minRange)&(sixes < maxRange))
@@ -170,11 +174,6 @@ public class Week05JUnitTest
 		
 			} 
 			 
-//			 if ((dist1 > stDev*2) || (dist1 < stDev*2)){
-//				System.out.println("This dist is out of range"); 
-//			 }
-//			 else {
-//				 System.out.println(dist1);
-//			 }
+
 	}
 }
